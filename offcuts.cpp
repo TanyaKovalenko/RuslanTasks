@@ -92,12 +92,14 @@ bool isVisible(vector<offcut> &offcuts)
 							offcuts[inx].A.x, offcuts[inx].A.y, 
 							offcuts[inx].B.x, offcuts[inx].B.y))
 							{
+								cout << "In first...";
 								x = -((O_Red_A_offcut.A.x*O_Red_A_offcut.B.y-O_Red_A_offcut.B.x*O_Red_A_offcut.A.y)*(offcuts[inx].B.x-offcuts[inx].A.x)-
 								      (offcuts[inx].A.x*offcuts[inx].B.y-offcuts[inx].B.x*offcuts[inx].A.y)*(O_Red_A_offcut.B.x-O_Red_A_offcut.A.x))/
 									  ((O_Red_A_offcut.A.y-O_Red_A_offcut.B.y)*(offcuts[inx].B.x-offcuts[inx].A.x)-(offcuts[inx].A.y-offcuts[inx].B.y)*(O_Red_A_offcut.B.x-O_Red_A_offcut.A.x));
 								y = ((offcuts[inx].A.y-offcuts[inx].B.y)*(-x)-(offcuts[inx].A.x*offcuts[inx].B.y-offcuts[inx].B.x*offcuts[inx].A.y))
 								     /(offcuts[inx].B.x-offcuts[inx].A.x);
 								len = sqrt((x - O_Red_B_offcut.B.x)*(x - O_Red_B_offcut.B.x) + (y - O_Red_B_offcut.B.y)*(y - O_Red_B_offcut.B.y));
+								cout << "------- x = " << x << " ------ y = " << y << " ------- len = " << len << " ------ lenToB  = " << lenToB;
 								if (len < lenToB)
 								{
 									lenToB = len;
@@ -108,12 +110,14 @@ bool isVisible(vector<offcut> &offcuts)
 							offcuts[inx].A.x, offcuts[inx].A.y, 
 							offcuts[inx].B.x, offcuts[inx].B.y))
 							{
+								cout << "In second...";
 								x = -((O_Red_B_offcut.A.x*O_Red_B_offcut.B.y-O_Red_B_offcut.B.x*O_Red_B_offcut.A.y)*(offcuts[inx].B.x-offcuts[inx].A.x)-
 								      (offcuts[inx].A.x*offcuts[inx].B.y-offcuts[inx].B.x*offcuts[inx].A.y)*(O_Red_B_offcut.B.x-O_Red_B_offcut.A.x))/
 									  ((O_Red_B_offcut.A.y-O_Red_B_offcut.B.y)*(offcuts[inx].B.x-offcuts[inx].A.x)-(offcuts[inx].A.y-offcuts[inx].B.y)*(O_Red_B_offcut.B.x-O_Red_B_offcut.A.x));
 								y = ((offcuts[inx].A.y-offcuts[inx].B.y)*(-x)-(offcuts[inx].A.x*offcuts[inx].B.y-offcuts[inx].B.x*offcuts[inx].A.y))
 								     /(offcuts[inx].B.x-offcuts[inx].A.x);
 								len = sqrt((x - O_Red_A_offcut.B.x)*(x - O_Red_A_offcut.B.x) + (y - O_Red_A_offcut.B.y)*(y - O_Red_A_offcut.B.y));
+								cout << "------- x = " << x << " ------ y = " << y << " ------- len = " << len << " ------ lenToB  = " << lenToB;
 								if (len < lenToA)
 								{
 									lenToA = len;
