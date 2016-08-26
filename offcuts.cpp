@@ -83,6 +83,9 @@ bool isVisible(vector<offcut> &offcuts)
 				// the second segment overlap BO, and at that, 
 				// these two segments intersect inside the triangle AOB.
 			
+				// x and y are the coordinates of the intersection point for every offcut and segment AB.
+				// len is the length from the point (x, y) to the ends of the offcut AB.
+				
 				float x, y, len;	
  				if (ifCross(O_Red_A_offcut.A.x, O_Red_A_offcut.A.y, 
 							O_Red_A_offcut.B.x, O_Red_A_offcut.B.y, 
