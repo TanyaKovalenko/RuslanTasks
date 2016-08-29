@@ -32,8 +32,33 @@ def merge(A, l, r):
     for indx in range(len(A)):
         A[indx] = B[indx]
 
-def mergeSort(A, l, r):
+def ifSortCheck(A):
+    for inx in range(len(A) - 2):
+        if (A[inx] > A[inx+1]):
+            return False
     
+    return True
+
+def mergeSort(*args):
+
+    if len(args) < 1:
+        return []
+    else:
+        A = args[0]
+        
+
+    if len(args) < 2:
+        l = 0
+    else:
+        l = args[1]
+        
+    
+    if len(args) < 3:
+        r = len(A) - 1
+    else:
+        r = args[2]       
+
+
     m = int((l+r)//2)
     
     if l < m:
@@ -48,8 +73,11 @@ def mergeSort(A, l, r):
 
 
 if __name__ == '__main__':
-        assert mergeSort([5, 9, 3, 2, 4, 15, 0], 0, 6) == [0, 2, 3, 4, 5, 9, 15]
-        assert mergeSort([7, 9, 3, 5], 0, 3) == [3, 5, 7, 9]
+            
+    if (ifSortCheck(mergeSort([5, 9, 3, 2, 4, 15, 0])) == False):        
+        print("mergeSort doesn't work")
+    if (ifSortCheck(mergeSort([7, 9, 3, 5])) == False):
+        print("mergeSort doesn't work")
 
 
 
